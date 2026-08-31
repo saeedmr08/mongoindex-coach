@@ -1,0 +1,27 @@
+{
+  "name": "mongoindex-coach",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline coach that simulates MongoDB explain() summaries and compares query cost before/after a proposed index.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "author": "Saeed Rumaneh",
+  "license": "MIT"
+}

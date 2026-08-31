@@ -1,0 +1,223 @@
+:root {
+  --bg: #0a0e17;
+  --panel: #111827;
+  --edge: #1e2a3d;
+  --cyan: #5ce1e6;
+  --violet: #a78bfa;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --ok: #34d399;
+  --mute: #8b9bb4;
+  --text: #e8eef8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    linear-gradient(135deg, #0a0e17 0%, #0f172a 45%, #12101f 100%);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(92, 225, 230, 0.08), transparent 35%),
+    radial-gradient(circle at 10% 80%, rgba(167, 139, 250, 0.1), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.25rem 1.2rem 3.5rem;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.6rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.sub {
+  color: var(--mute);
+  max-width: 40rem;
+  line-height: 1.55;
+  margin: 0.85rem 0 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 860px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  padding: 1.1rem 1.15rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  color: var(--violet);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.chip {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--edge);
+  background: #0c1320;
+  color: var(--mute);
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip.on {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(92, 225, 230, 0.08);
+}
+
+.meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--mute);
+  margin-bottom: 1rem;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.plan {
+  border: 1px solid var(--edge);
+  padding: 0.75rem;
+  background: #0b1220;
+}
+
+.plan header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  margin-bottom: 0.55rem;
+  color: var(--mute);
+}
+
+.plan header strong {
+  color: var(--text);
+}
+
+.bar {
+  height: 8px;
+  background: #1a2436;
+  margin: 0.35rem 0 0.75rem;
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--danger), var(--warn));
+}
+
+.bar.good > span {
+  background: linear-gradient(90deg, var(--ok), var(--cyan));
+}
+
+.stage {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed rgba(139, 155, 180, 0.2);
+  color: var(--mute);
+}
+
+.stage b {
+  color: var(--cyan);
+}
+
+.proposed {
+  margin-top: 1rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(92, 225, 230, 0.35);
+  background: rgba(92, 225, 230, 0.05);
+  color: var(--cyan);
+}
+
+.warnings {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.warning {
+  font-size: 0.82rem;
+  padding: 0.55rem 0.7rem;
+  border-left: 3px solid var(--warn);
+  background: rgba(251, 191, 36, 0.08);
+  color: #fde68a;
+}
+
+.ratio {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.ratio span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--mute);
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
